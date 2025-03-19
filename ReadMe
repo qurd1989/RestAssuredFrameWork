@@ -1,0 +1,4 @@
+Next API validation: I need to optimize the API endpoints, tokens and use Lombok for pojo classes.
+Allure report: Below command needs to be run to generate
+the Allure report. If only allure-results is not created correclty, then allure-results folder needs to be deleted and then run the below command.
+"allure generate allure-results --clean -o allure-report"

@@ -1,4 +1,4 @@
-package org.example;
+package spotify.oauth2;
 
 /**
  * Hello world!
