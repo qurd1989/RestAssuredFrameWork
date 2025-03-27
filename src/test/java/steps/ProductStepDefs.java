@@ -18,7 +18,7 @@ public class ProductStepDefs {
 RestResouce restResouce = new RestResouce();
     @When("I send a get reqwest to the API")
     public void i_send_a_get_reqwest_to_the_api() {
-  response = RestResouce.sendGetRequest();
+  response = RestResouce.sendGetRequest(SpecBuilder.getEndPoint());
     }
     @Then("The  response should have valid data")
     public void the_response_should_have_valid_data() {
