@@ -1,24 +1,17 @@
 package product.api;
 
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
 import product.utils.ConfigLoader;
 import product.utils.Project;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-
-public class SpecBuilder {
+public class RequestSpecBuilder {
     private static final Project project = new Project("fakestore");
     private static final String END_POINT = ConfigLoader.getProperty("end_point");
 
 
     public static RequestSpecification getRequestSpecBuilder() {
-        return new RequestSpecBuilder().
+        return new io.restassured.builder.RequestSpecBuilder().
                 setBaseUri(project.getBaseUri()).
                 log(LogDetail.ALL).build();
 

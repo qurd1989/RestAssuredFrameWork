@@ -2,8 +2,6 @@ package product.api;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import product.api.ResponseSpecBuilder;
-import static product.api.SpecBuilder.getRequestSpecBuilder;
 
 import static io.restassured.RestAssured.given;
 
@@ -18,7 +16,7 @@ public class RestResouce {
     public static Response sendGetRequest(String endPoint) {
         return RestAssured
                 .given()
-                .spec(SpecBuilder.getRequestSpecBuilder())
+                .spec(RequestSpecBuilder.getRequestSpecBuilder())
                 .when()
                 .get(endPoint)
                 .then()
@@ -31,7 +29,7 @@ public class RestResouce {
     public static Response sendPostRequest(String endPoint, Object body) {
         return RestAssured
                 .given()
-                .spec(SpecBuilder.getRequestSpecBuilder())
+                .spec(RequestSpecBuilder.getRequestSpecBuilder())
                 .body(body)
                 .when()
                 .post(endPoint)

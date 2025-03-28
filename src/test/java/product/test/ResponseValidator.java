@@ -1,9 +1,7 @@
 package product.test;
 
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Assert;
-import product.api.SpecBuilder;
 
 public class ResponseValidator {
 
