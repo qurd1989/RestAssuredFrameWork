@@ -4,22 +4,24 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import product.api.RestResouce;
-import product.api.RequestSpecBuilder;
-import product.test.ResponseValidator;
+import product.test.ProductResponseValidator;
+import product.utils.ConfigLoader;
 
 import static io.restassured.RestAssured.given;
 
 
 public class ProductStepDefs {
     private Response response;
-RestResouce restResouce = new RestResouce();
+    private String endpoint;
+
     @When("I send a get reqwest to the API")
     public void i_send_a_get_reqwest_to_the_api() {
-  response = RestResouce.sendGetRequest(RequestSpecBuilder.getEndPoint());
+         endpoint = ConfigLoader.getProperty("end_point");
+        response = RestResouce.sendGetRequest(endpoint);
     }
     @Then("The  response should have valid data")
     public void the_response_should_have_valid_data() {
-        ResponseValidator.validateResponse(response);
+        ProductResponseValidator.validateResponse(response);
     }
 
 }
