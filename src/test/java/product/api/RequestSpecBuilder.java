@@ -6,8 +6,8 @@ import product.utils.ConfigLoader;
 import product.utils.Project;
 
 public class RequestSpecBuilder {
+    //this code needs to be optimized, to make it more readable and maintainable uri should be passed as dynamic value
     private static final Project project = new Project("fakestore");
-    private static final String END_POINT = ConfigLoader.getProperty("end_point");
 
 
     public static RequestSpecification getRequestSpecBuilder() {
@@ -17,15 +17,5 @@ public class RequestSpecBuilder {
 
     }
 
-//    public static RequestSpecification getaccountRequestSpecBuilder() {
-//        return new RequestSpecBuilder().
-//                setBaseUri(BASE_URI).
-//                setBasePath(BASE_PATH).
-//                log(LogDetail.ALL).build();
-//
-//    }
-    public static String getEndPoint() {
-        return END_POINT;
-    }
 
 }
